@@ -1,4 +1,4 @@
-# jQuery常见api范例
+# 关于 jQuery 选择器 常见api范例
 ### .eq
 对于特定结果集，获取到指定index的jQuery对象，使用`eq`方法
 ```JavaScript
