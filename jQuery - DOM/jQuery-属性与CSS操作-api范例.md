@@ -6,7 +6,7 @@ $('input').val()
 
 $('input').val('newValue')
 ```
-<br>
+
 ### .attr()
 获取元素特定属性的值
 ```JavaScript
@@ -19,7 +19,7 @@ $( "#greatphoto" ).attr({
   title: "photo by Kelly Clark"
 });
 ```
-<br>
+
 ### .removeAttr()
 为匹配的元素集合中的元素移除一个属性（attribute）
 
@@ -27,10 +27,10 @@ $( "#greatphoto" ).attr({
 $('div').removeAttr('id')  //移除div标签的id属性
 ```
 `.removeAttr() `方法使用原生的 JavaScript `removeAttribute() `函数,但是它的优点是可以直接在一个 jQuery 对象上调用该方法，并且它解决了跨浏览器的属性名不同的问题。
-<br>
+
 ### .prop() / .removeProp()
 这两个方法是用来操作元素的`property`的，`property`和`attibute`是非常相似的概念，详情参考 **[jQuery的 attr 与 prop](http://www.cnblogs.com/dolphinX/p/3348582.html)**
-<br>
+
 ## CSS 操作
 ### .css()
 #### .css(propertyName) / .css(propertyNames)
@@ -56,7 +56,7 @@ $( this ).css({
   "font-weight": "bolder"
 })
 ```
-<br>
+
 ### .addClass() / .removeClass()
 #### .addClass()
 为元素添加class，不是覆盖原class，是追加，也不会检查重复
@@ -68,13 +68,13 @@ $( "p" ).addClass( "active" )   //给p标签添加active css样式
 ```JavaScript
 $( "p" ).removeClass( "active" )   //给p标签移除active css样式
 ```
-<br>
+
 ### .hasClass()
 检查元素是否包含某个class，返回`true` / `false`
 ```JavaScript
 $( "#mydiv" ).hasClass( "active" )  //检查id为mydiv的元素是否包含active css样式
 ```
-<br>
+
 ### .toggleClass()
 toggle是切换的意思，方法用于切换
 ```JavaScript
