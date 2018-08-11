@@ -59,7 +59,7 @@ $( "<p>Test</p>" ).insertBefore( ".inner" )
 $( ".inner" ).after( "<p>Test</p>" )
 ```
 **[JSBin](http://jsbin.com/kikocoluqo/4/edit?html,js,output)**
-### ..insertAfter()
+### .insertAfter()
 把`<p>Test</p>`插入到`.inner`之后，同前面的`.insertBefore`用法
 ```JavaScript
 $( "<p>Test</p>" ).insertAfter( ".inner" )
@@ -79,7 +79,7 @@ $("#div1").remove();
 $('div').remove('.test')
 ```
 **[JSBin](http://jsbin.com/regibojaro/edit?html,js,output)**
-<br>
+
 ### .empty()
 清空被选择元素内所有子元素
 ```JavaScript
