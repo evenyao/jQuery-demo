@@ -4,7 +4,7 @@
 ```JavaScript
 var obj = $('<div class="test"><p><span>Done</span></p></div>')
 ```
-<br>
+
 ## 添加元素
 ### .append()
 在 `a 标签`里面添加内容是`b的p标签`
@@ -27,7 +27,7 @@ $( "p" ).append( $( "strong" ) )
 $( "<p>b</p>" ).appendTo( "a" )
 ```
 **[JSBin](http://jsbin.com/bajegebudu/3/edit?html,js,output)**
-<br>
+
 ### .prepend()
 向对象头部追加内容，用法和`append`类似，内容添加到最开始
 ```JavaScript
@@ -52,7 +52,7 @@ $( ".inner" ).before( "<p>Test</p>" )
 $( "<p>Test</p>" ).insertBefore( ".inner" )
 ```
 **[JSBin](http://jsbin.com/kikocoluqo/edit?html,js,output)**
-<br>
+
 ### .after()
 和`before`相反，在对象后面（不是尾部，而是外面，和对象并列同级）插入内容。参数传递和`append`类似
 ```JavaScript
@@ -65,7 +65,7 @@ $( ".inner" ).after( "<p>Test</p>" )
 $( "<p>Test</p>" ).insertAfter( ".inner" )
 ```
 **[JSBin](http://jsbin.com/xocacuvaha/1/edit?html,js,output)**
-<br>
+
 ## 删除元素
 ### .remove()
 删除被选元素（及其子元素）
@@ -85,11 +85,11 @@ $('div').remove('.test')
 ```JavaScript
 $('body').empty()
 ```
-<br>
+
 ### .detach()
 `.detach()` 和`.remove()`一样，但 `.detach()`保存所有 jQuery 数据和被移走的元素相关联。
 当需要移走一个元素，不久又将该元素插入DOM时，这种方法很有用。
-<br>
+
 ## 包裹元素
 ### .wrap()
 为每个对象包裹一层HTML结构
@@ -114,7 +114,7 @@ $( ".inner" ).wrap( "<div class='new'></div>" )
   </div>
 </div>
 ```
-<br>
+
 ### .wrapAll()
 把所有匹配对象包裹在同一个HTML结构中
 ```HTML
@@ -136,7 +136,7 @@ $( ".inner" ).wrapAll( "<div class='new' />")
    </div>
 </div>
 ```
-<br>
+
 ### .wrapInner()
 把匹配对象里层包裹一个HTML结构
 ```HTML
@@ -160,10 +160,10 @@ $( ".inner" ).wrapInner( "<div class='new'></div>")
   </div>
 </div>
 ```
-<br>
+
 ### .unwrap()
 把DOM元素的parent移除，但保留HTML内容。
-<br>
+
 ## 关于 Text 和 Html
 ### .html()
 这是一个读写两用的方法，用于获取/修改元素的`innerHTML`
