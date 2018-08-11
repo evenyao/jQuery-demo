@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jQuery 实现闪烁效果</title>
+  <style>
+    #border.active {
+      color: white;
+    }
+
+    #border {
+      background: black;
+      color: black;
+      padding: 5px;
+      display: inline-block;
+    }
+  </style>
+
+</head>
+<body>
+  <h1 id="border">hello world</h1>
+  </div>
+</body>
+</html>
+
+<script src="https://cdn.bootcss.com/jquery/1.12.2/jquery.js"></script>
+<script>
+  var border = $('#border')
+  function toggle(){
+    if (border.hasClass('active')){
+       border.removeClass('active')
+    }else {
+      border.addClass('active')
+    }
+  }
+  setInterval(toggle,300)
+</script>
