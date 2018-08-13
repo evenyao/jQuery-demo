@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    #btn-box {
+      padding: 10px;
+      border: 1px solid #ddd;
+      box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.15);
+    }
+
+    #btn-box button {
+      margin-bottom: 2px;
+    }
+    #btn-box p {
+      display: inline-block;
+      font-size: 12px;
+      margin-left: 5px;
+    }
+    .container {
+      position: relative;
+    }
+
+    .box {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: lightblue;
+      margin-top: 20px;
+    }
+  </style>
+  <title>jQuery 自定义动画 / 动画队列</title>
+</head>
+<body>
+  <div id="btn-box">
+    <button id="btn0">start-css方法（无过渡）</button><p>使用.css方法，变化是立即的，无过渡的</p><br>
+
+    <button id="btn1">start-animate方法</button><p>使用.animate方法，则是渐变的，有过渡的</p><br>
+    <button id="btn2">step+50</button><p>使用.animate方法，右移50px</p><br>
+    <button id="btn3">step-50</button><p>使用.animate方法，左移50px</p><br>
+    <button id="btn4">auto</button><p>使用.animate方法，进行逆时针方形移动</p><br>
+    <button id="btn5">reset</button><p>使用.animate方法，重置为最起始absolute位置</p><br>
+    <button id="btn6">stop(false,false)</button><p>停止当前动画，默认即是等同于.stop(false,false)</p><br>
+    <button id="btn7">stop(true,false)</button><p>停止当前动画，并清除未执行的动画队列；即是停止在当前位置不动</p><br>
+    <button id="btn8">stop(true,true)</button><p>停止当前动画，并清除未执行的动画队列，并且展示当前最近一帧的动画最终状态</p><br>
+    <button id="btn9">finish</button><p>停止当前动画，并清除未执行的动画队列，并且展示整个动画队列的最终状态</p><br>
+  </div>
+  <div class="container">
+    <div class="box"></div>
+  </div>
+</body>
+</html>
+
+<script src="jquery-3.3.1.js"></script>
+<script>
+// 使用.css方法，变化是立即的，无过渡的
+$('#btn0').click(function(){
+  $('.box').css({
+    left: '100px'
+  },1000)
+})
+
+// 使用.animate方法，则是渐变的，有过渡的
+$('#btn1').click(function(){
+  $('.box').animate({
+    left: '100px'
+  },1000)
+})
+
+// 使用.animate方法，右移50px
+$('#btn2').click(function(){
+  $('.box').animate({
+    left: '+=50'
+  },1000)
+})
+
+// 使用.animate方法，左移50px
+$('#btn3').click(function(){
+  $('.box').animate({
+    left: '-=50'
+  },1000)
+})
+
+// 使用.animate方法，进行逆时针方形移动
+$('#btn4').click(function(){
+  $('.box').animate({
+    left: '150px'
+  },1000)
+  .animate({
+    left: '150px',
+    top: '150px'
+  },1000)
+  .animate({
+    left: '0',
+    top: '150px'
+  },1000)
+  .animate({
+    left: '0',
+    top: '0'
+  },1000)
+})
+
+// 使用.animate方法，重置为最起始absolute位置
+$('#btn5').click(function(){
+  $('.box').animate({
+    left: 0,
+    top: 0
+  },1000)
+})
+
+// 停止当前动画，默认即是等同于.stop(false,false)
+$('#btn6').click(function(){
+  $('.box').stop()
+})
+
+// 停止当前动画，并清除未执行的动画队列；即是停止在当前位置不动
+$('#btn7').click(function(){
+  $('.box').stop(true, false)
+})
+
+// 停止当前动画，并清除未执行的动画队列，并且展示当前最近一帧的动画最终状态
+$('#btn8').click(function(){
+  $('.box').stop(true, true)
+})
+
+//停止当前动画，并清除未执行的动画队列，并且展示整个动画队列的最终状态
+$('#btn9').click(function(){
+  $('.box').finish()
+})
+
+
+</script>

@@ -13,3 +13,6 @@
 
 ### jQuery 动画效果 相关
  - 使用 jQuery 事件和动画效果 demo [包含动画队列相关]
+
+### jQuery 自定义动画 与 动画队列
+ - 使用jQuery animate 方法实现自定义动画 和 动画队列的解释
