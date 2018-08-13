@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    .box {
+      background: lightblue;
+      padding: 10px;
+      width: 150px;
+      height: 150px;
+      margin-top: 20px;
+    }
+  </style>
+  <title>jQuery 效果</title>
+</head>
+<body>
+  <button id="btn-box1">show</button>
+  <button id="btn-box2">hide</button>
+  <button id="btn-box3">fadeIn</button>
+  <button id="btn-box4">fadeOut</button>
+  <button id="btn-box5">slideDown</button>
+  <button id="btn-box6">slideUp</button>
+  <button id="action">回调</button>
+  <div class="container">
+    <div class="box">
+      hello
+    </div>
+  </div>
+</body>
+</html>
+
+<script src="jquery-3.3.1.js"></script>
+<script>
+$('#btn-box1').on('click',function(){
+  $('.box').show('normal')
+})
+
+$('#btn-box2').on('click',function(){
+  $('.box').hide('normal')
+})
+
+$('#btn-box3').on('click',function(){
+  $('.box').fadeIn()
+})
+
+$('#btn-box4').on('click',function(){
+  $('.box').fadeOut()
+})
+
+$('#btn-box5').on('click',function(){
+  $('.box').slideDown()
+})
+
+$('#btn-box6').on('click',function(){
+  $('.box').slideUp()
+})
+
+$('#action').on('click',function(){
+  var $box = $('.box')
+
+  //回调地狱写法
+  // $box.hide(1000, function(){
+  //   $box.show(1000, function(){
+  //     $box.fadeOut('slow', function(){
+  //       $box.fadeIn('slow', function(){
+  //         $box.slideUp(function(){
+  //           $box.slideDown(function(){
+  //             console.log('动画执行完毕')
+  //           })
+  //         })
+  //       })
+  //     })
+  //   })
+  // })
+
+  //使用jQuery动画队列写法
+  $box.hide(1000)
+      .show(1000)
+      .fadeOut('slow')
+      .fadeIn('slow')
+      .slideUp()
+      .slideDown(function(){
+        console.log('真的执行完毕了')  //最后执行同步回调
+      })
+    console.log('动画完毕了吗？')  //动画才刚开始，在动画队列创建的时候，就输出这句话，异步
+})
+</script>
